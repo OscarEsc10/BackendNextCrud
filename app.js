@@ -16,14 +16,15 @@ import bodyparser from 'body-parser'; // Import body-parser middleware for parsi
 const app = express(); 
 
 app.use(cors()); // Use CORS middleware to allow cross-origin requests
-app.use(express.json()); // Middleware to parse JSON request bodies
-app.use(bodyparser.json()); // Middleware to parse JSON request bodies
-app.use(bodyparser.urlencoded({ extended: true })); // Middleware to parse URL-encoded request
+app.use(express.json()); // Middleware to parse JSON request bodies (built-in)
+app.use(bodyparser.json()); // Middleware to parse JSON request bodies (body-parser)
+app.use(bodyparser.urlencoded({ extended: true })); // Middleware to parse URL-encoded request bodies
 
-app.use('/hollywoodStars', hollywoodStars); // Use the stars router for handling requests to /stars
+// Use the Hollywood stars router for handling requests to /hollywoodStars
+app.use('/hollywoodStars', hollywoodStars); 
 
 try {
-    // Set the port from environment variable or use 3000 as default
+    // Set the port from environment variable or use 3001 as default
     const PORT = process.env.PORT || 3001;
     // Start the server and listen on the specified port
     app.listen(PORT, () => {

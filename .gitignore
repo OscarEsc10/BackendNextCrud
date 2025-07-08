@@ -1,5 +1,8 @@
 # Ignore node modules
 node_modules/
 
+CrudJs/node_modules/
+
+
 # Ignore the file .env
 .env

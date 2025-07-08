@@ -26,13 +26,23 @@ class StarsModel {
   // Retrieves all documents (stars) from the collection
   // Returns: An array of all star documents
   // Throws: Error if the collection is not initialized
-  async getAll() {
-    // Ensure the collection is initialized before performing operations
-    if (!collection) {
-      throw new Error('Collection not initialized. Please check your database connection.');
-    }
-    return await collection.find({}).toArray();
+async getAll(page = 1, limit = 10, filter = {}) {
+  if (!collection) {
+    throw new Error('Collection not initialized.');
   }
+
+  const skip = (page - 1) * limit;
+
+  return await collection.find(filter).skip(skip).limit(limit).toArray();
+}
+
+async countDocuments(filter = {}) {
+  if (!collection) {
+    throw new Error('Collection not initialized. Please check your database connection.');
+  }
+
+  return await collection.countDocuments(filter);
+}
 
   // Retrieves a single star document by its ID
   // id: The ObjectId string of the star to retrieve

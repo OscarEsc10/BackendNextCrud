@@ -11,6 +11,7 @@ class dbStarsConnect {
     constructor() {
         // Set the MongoDB client using the connection URI
         const queryString = uri; // This should be replaced with the actual URI variable
+        
         this.client = new MongoClient(queryString)
         this.connect(); // Call the connect method to establish a connection
     }
