@@ -84,11 +84,11 @@ npm run dev
 
 | Method | Endpoint       | Description               |
 |--------|----------------|---------------------------|
-| GET    | `/stars`       | Fetch all items           |
-| GET    | `/stars/:id`   | Fetch a single item       |
-| POST   | `/stars`       | Create a new item         |
-| PUT    | `/stars/:id`   | Update an existing item   |
-| DELETE | `/stars/:id`   | Delete an item            |
+| GET    | `/stars`       | Fetch all user            |
+| GET    | `/stars/:id`   | Fetch a single user       |
+| POST   | `/stars`       | Create a new user         |
+| PUT    | `/stars/:id`   | Update an existing user   |
+| DELETE | `/stars/:id`   | Delete an user            |
 
 
 ---
