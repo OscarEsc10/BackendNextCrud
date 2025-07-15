@@ -17,7 +17,6 @@ const app = express();
 
 app.use(cors()); // Use CORS middleware to allow cross-origin requests
 app.use(express.json()); // Middleware to parse JSON request bodies (built-in)
-app.use(bodyparser.json()); // Middleware to parse JSON request bodies (body-parser)
 app.use(bodyparser.urlencoded({ extended: true })); // Middleware to parse URL-encoded request bodies
 
 // Use the Hollywood stars router for handling requests to /hollywoodStars
